@@ -22,7 +22,16 @@ app.post('/pioneerServiceNow', (req, res) =>{
       "data": {"result": "result"},
       "source": "dialogflow"
     }      
-}
+  }
+  if(req.body.result.action === 'create_incident_sub_category2-1'){    
+    var resObj= {
+      "speech": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please find the details below.\n"
+      +"Description : "+req.body.result.parameters.issueDescription+". BusNumber : "+req.body.result.parameters.busNumber+". A acknowledge SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber,
+      "displayText": "result",
+      "data": {"result": "result"},
+      "source": "dialogflow"
+    }
+  }  
 res.send(resObj)});
 
 
