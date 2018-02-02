@@ -17,7 +17,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   if(req.body.result.action === 'create_incident_sub_category1-2'){    
     var resObj= {
       "speech": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please find the details below.\n"
-      +"Description : "+req.body.result.parameters.issueDescription+". Location "+req.body.result.parameters.location+" A acknowledge SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber,
+      +"Description : "+req.body.result.parameters.issueDescription+". Location : "+req.body.result.parameters.location+". A acknowledge SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber,
       "displayText": "result",
       "data": {"result": "result"},
       "source": "dialogflow"
