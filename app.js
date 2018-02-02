@@ -2,10 +2,10 @@ const express = require('express')
 const app = express()
 const bodyparser = require('body-parser')
 
-/*
+
 const DialogflowApp = require('actions-on-google').DialogflowApp; // Google Assistant helper library
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
-  console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
+  /*console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
   console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
   if (request.body.result) {
     processV1Request(request, response);
@@ -124,8 +124,8 @@ let action = request.body.result.action;
     }
   }
 }
-}
-  */
+}*/
+  
 app.use(bodyparser.json());
 app.post('/add', (req, res) => { 
 var result = req.body.data1+req.body.data2;
@@ -169,7 +169,14 @@ console.log(req.query)
 
 
 app.get('/hi', (req, res) => res.send('Hello There!'))
-app.get('/', (req, res) => res.send('Hello...!'))
+app.post('/', (req, res) =>{ 
+var resObj= {
+  "speech": "Hello Your result ",
+  "displayText": "result",
+  "data": {"result": "result"},
+  "source": "dialogflow"
+}
+res.send(resObj)});
 
 
 
