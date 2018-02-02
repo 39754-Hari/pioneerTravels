@@ -59,6 +59,14 @@ app.post('/pioneerServiceNow', (req, res) =>{
       "source": "dialogflow"
     }
   }
+  if(req.body.result.action === 'incident_status'){    
+    var resObj= {
+      "speech": "Hi,Your incident id is : "+req.body.parameters.incidentId,
+      "displayText": "result",
+      "data": {"result": "result"},
+      "source": "dialogflow"
+    }
+  }
 res.send(resObj)});
 
 
