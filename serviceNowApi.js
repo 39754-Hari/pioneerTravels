@@ -36,9 +36,8 @@ methods.createIncident =  function(userName,description, severity, callback){
             console.log('request body:',options);
         request(options, function (error, response, body) {
           if (error) throw new Error(error);
-
-          console.log("Success : "+body.result);
-          callback(null, body);
+          console.log("Success : "+response.result.number);
+          callback(null, response);
         });
 };
 methods.getIncident = function(ticketnumber, callback){
