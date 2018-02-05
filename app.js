@@ -9,13 +9,13 @@ app.post('/pioneerServiceNow', (req, res) =>{
   console.log(req.body);
   if(req.body.result.action === 'create_incident_sub_category1-1'){    
     serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2',function(err,data){
-      resObj= {
+      res.send({
         "speech": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please find the details below.\n"
         +"Incident Id : "+data.result.number+". A acknowledge SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber,
         "displayText": "result",
         "data": {"result": "result"},
         "source": "dialogflow"
-      }   
+      });   
     });   
   } 
   if(req.body.result.action === 'create_incident_sub_category1-2'){    
@@ -72,7 +72,8 @@ app.post('/pioneerServiceNow', (req, res) =>{
     }
   }
   console.log('HIIIII',resObj);
-res.send(resObj)});
+//res.send(resObj)
+});
 
 
 app.listen(process.env.port||process.env.PORT||3000, () => console.log('Example app listening on port 3000!'))
