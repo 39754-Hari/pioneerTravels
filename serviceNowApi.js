@@ -1,7 +1,7 @@
 /*var http = require("http");
 
-var methods={};
-methods.createincident  = function(){
+
+  = function(){
     var options = {
         hostname: 'www.postcatcher.in',
         port: 80,
@@ -16,9 +16,9 @@ methods.createincident  = function(){
 module.exports = methods;*/
 var request = require("request");
 
-module.exports = {
-    'createIncident' : function(userName,description, severity, callback){
+var methods={};
 
+methods.createIncident =  function(userName,description, severity, callback){
         console.log("The Final Message Utterance to send POST as Query to Service Now");
         var options = { method: 'POST',
           url: 'https://dev18442.service-now.com/api/now/v1/table/incident',
@@ -40,8 +40,8 @@ module.exports = {
           console.log("Success : "+body);
           callback(null, body);
         });
-    },
-    'statusIncident' : function(ticketnumber, callback){
+};
+methods.getIncident = function(ticketnumber, callback){
 
         console.log("The Final Message Utterance to send GET as Query to Service Now");
         var options = { method: 'GET',
@@ -58,6 +58,6 @@ module.exports = {
           console.log("Success : "+body);
           callback(null, body);
         });
-    }
+};
+    module.exports = methods;
 
-}
