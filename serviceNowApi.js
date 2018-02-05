@@ -46,6 +46,7 @@ methods.getIncident = function(ticketnumber, callback){
         var options = { method: 'GET',
           url: 'https://dev18442.service-now.com/api/now/v1/table/incident',
           qs: { number: ticketnumber },
+          json: true,
           headers:
            { 'postman-token': '5441f224-d11a-2f78-69cd-51e58e2fbdb6',
              'cache-control': 'no-cache',
@@ -54,7 +55,7 @@ methods.getIncident = function(ticketnumber, callback){
         request(options, function (error, response, body) {
           if (error) throw new Error(error);
             
-          console.log("Success resp: ",JSON.parse(JSON.stringify(body)).error);
+          console.log("Success resp: ",body.error.message);
           callback(null, body);
         });
 };
