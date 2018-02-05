@@ -99,16 +99,27 @@ app.post('/pioneerServiceNow', (req, res) =>{
   }
   if(req.body.result.action === 'incident_status'){  
     serviceNowApi.getIncident(req.body.result.parameters.incidentId,function(err,data) {
+      if (data.error.message == 'No Record found'){
+        var resObj= {
+          "speech": "Hi,Your Incident id is : "+req.body.result.parameters.incidentId + ",Not Found",
+          "displayText": "result",
+          "data": {"result": "result"},
+          "source": "dialogflow"
+        }
+      }
+      else{
+        var resObj= {
+          "speech": "Hi,Your Incident id is : "+req.body.result.parameters.incidentId,
+          "displayText": "result",
+          "data": {"result": "result"},
+          "source": "dialogflow"
+        }
+      }
       console.log('After call',data)
+      res.send(resObj)
     } );
-    var resObj= {
-      "speech": "Hi,Your Incident id is : "+req.body.result.parameters.incidentId,
-      "displayText": "result",
-      "data": {"result": "result"},
-      "source": "dialogflow"
-    }
+    
   }
-//res.send(resObj)
 });
 
 
