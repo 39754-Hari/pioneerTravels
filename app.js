@@ -7,6 +7,7 @@ app.use(bodyparser.json());
 app.post('/pioneerServiceNow', (req, res) =>{ 
   console.log(req.body);
   if(req.body.result.action === 'create_incident_sub_category1-1'){    
+    serviceNowApi.createincident();
       var resObj= {
         "speech": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully for Category - Bus schedule. Please find the details below.\n"
         +"Description : "+req.body.result.parameters.issueDescription+". A acknowledge SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber,
