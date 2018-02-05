@@ -53,8 +53,8 @@ methods.getIncident = function(ticketnumber, callback){
 
         request(options, function (error, response, body) {
           if (error) throw new Error(error);
-
-          console.log("Success resp: "+body);
+            
+          console.log("Success resp: ",JSON.parse(JSON.stringify(body)).error);
           callback(null, body);
         });
 };
