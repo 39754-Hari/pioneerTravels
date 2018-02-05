@@ -11,7 +11,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
     serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2',function(err,data){
       resObj= {
         "speech": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please find the details below.\n"
-        +"Incident Id : "+req.body.result.parameters.issueDescription+". A acknowledge SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber,
+        +"Incident Id : "+data.result.number+". A acknowledge SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber,
         "displayText": "result",
         "data": {"result": "result"},
         "source": "dialogflow"
@@ -71,6 +71,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
       "source": "dialogflow"
     }
   }
+  console.log('HIIIII',resObj);
 res.send(resObj)});
 
 
