@@ -8,7 +8,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   var resObj = {};
   console.log(req.body);
   if(req.body.result.action === 'create_incident_sub_category1-1'){    
-    serviceNowApi.createincident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2',function(err,data){
+    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2',function(err,data){
       resObj= {
         "speech": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please find the details below.\n"
         +"Incident Id : "+req.body.result.parameters.issueDescription+". A acknowledge SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber,
