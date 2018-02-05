@@ -10,8 +10,8 @@ app.post('/pioneerServiceNow', (req, res) =>{
   if(req.body.result.action === 'create_incident_sub_category1-1'){    
     serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2',function(err,data){
       res.send({
-        "speech": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please find the details below.\n"
-        +"Incident Id : "+data.result.number+". A acknowledge SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber,
+        "speech": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully and our service agent will get back to you within 48 hours regarding your issue. Please note your incident id for future reference : "+data.result.number+". \nA acknowledge SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
+        +".\n For any queries regarding your issue, please call our customer care center.",
         "displayText": "result",
         "data": {"result": "result"},
         "source": "dialogflow"
@@ -71,7 +71,6 @@ app.post('/pioneerServiceNow', (req, res) =>{
       "source": "dialogflow"
     }
   }
-  console.log('HIIIII',resObj);
 //res.send(resObj)
 });
 
