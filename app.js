@@ -99,7 +99,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   }
   if(req.body.result.action === 'incident_status'){  
     serviceNowApi.getIncident(req.body.result.parameters.incidentId,function(err,data) {
-      console.log('After call',data.message)
+      console.log('After call',data.error)
       /*if (data.error.message == 'No Record found'){
         var resObj= {
           "speech": "Hi,Your Incident id is : "+req.body.result.parameters.incidentId + ",Not Found",
