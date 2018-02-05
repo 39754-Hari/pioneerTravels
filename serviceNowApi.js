@@ -33,11 +33,11 @@ methods.createIncident =  function(userName,description, severity, callback){
              urgency: severity ,
              comments: 'Created from dialogflow' },
           json: true };
-
+            console.log('request body:',body);
         request(options, function (error, response, body) {
           if (error) throw new Error(error);
 
-          console.log("Success : "+body);
+          console.log("Success : "+body.result);
           callback(null, body);
         });
 };
