@@ -54,7 +54,7 @@ methods.getIncident = function(ticketnumber, callback){
         request(options, function (error, response, body) {
           if (error) throw new Error(error);
 
-          console.log("Success : "+response.body);
+          console.log("Success : "+response.body.status);
           callback(null, body);
         });
 };
