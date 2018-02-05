@@ -28,10 +28,10 @@ module.exports = {
              authorization: 'Basic MzMyMzg6YWJjMTIz',
              'content-type': 'application/json' },
           body:
-          { short_description: desc,
-             caller_id: 'Hari Krishnan.V',
+          { short_description: description,
+             caller_id: userName,
              urgency: severity ,
-             comments: 'Chatbot Testing' },
+             comments: 'Created from dialogflow' },
           json: true };
 
         request(options, function (error, response, body) {
