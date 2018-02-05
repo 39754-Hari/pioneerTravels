@@ -2,20 +2,20 @@ const express = require('express')
 const app = express()
 const bodyparser = require('body-parser')
 var serviceNowApi = require('./serviceNowApi.js')
+var resObj = {};
 app.use(bodyparser.json());
 
 app.post('/pioneerServiceNow', (req, res) =>{ 
-  var resObj = {};
   console.log(req.body);
   if(req.body.result.action === 'create_incident_sub_category1-1'){    
     serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2',function(err,data){
-      res.send({
+      resObj= {
         "speech": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please find the details below.\n"
         +"Incident Id : "+data.result.number+". A acknowledge SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber,
         "displayText": "result",
         "data": {"result": "result"},
         "source": "dialogflow"
-      } );  
+      }   
     });   
   } 
   if(req.body.result.action === 'create_incident_sub_category1-2'){    
