@@ -287,7 +287,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
             };
           }
           else{
-            if (data.error != 'undefined' ){
+            if (data.error.message != 'undefined' ){
               if(data.error.message == 'No Record found'){
                 resObj= {            
                "speech": "",
