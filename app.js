@@ -265,6 +265,11 @@ app.post('/pioneerServiceNow', (req, res) =>{
     });
   }
   if(req.body.result.action === 'incident_status'){
+    console.log((req.body.result.parameters.incidentId).toLowerCase.indexOf('inc'));
+    if((req.body.result.parameters.incidentId).toLowerCase.indexOf('inc')!=-1)
+      {
+        console.log('hiii');
+      }
     var resObj = {}  ;
     serviceNowApi.getIncident(req.body.result.parameters.incidentId,function(err,data) {
       if (err) {
