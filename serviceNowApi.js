@@ -25,7 +25,7 @@ methods.createIncident =  function(params, severity, callback){
             caller_id: params.userName,
             sys_created_by: params.userName,
             category: params.category,
-            subcategory: params.subcategory,
+            subcategory: params.sub_category,
             urgency: severity ,
             priority: severity,
             state: 2,
