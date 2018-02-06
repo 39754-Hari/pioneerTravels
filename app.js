@@ -23,7 +23,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
         {
           "type": 2,
           "platform": "facebook",
-          "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully and our service agent will get back to you within 48 hours regarding your issue. Please note your incident id for future reference : 12345"+/*data.result.number*/
+          "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully and our service agent will get back to you within 48 hours regarding your issue. Please note your incident id for future reference : 12345"/*+data.result.number*/
           +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
           +".\nFor any queries regarding your issue, please call our customer care center. What do you want to do next?",
           "replies": [
