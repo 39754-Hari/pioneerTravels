@@ -38,6 +38,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
           "platform": "facebook",
           "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
           +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
+          +". \nOur customer care agent will get back to you shortly"
           +".\nWhat do you wanna do next?",
           "replies": [
             "Exit",
@@ -101,6 +102,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
             "platform": "facebook",
             "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
             +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
+            +". \nOur customer care agent will get back to you shortly"
             +".\nWhat do you wanna do next?",
             "replies": [
               "Exit",
@@ -145,6 +147,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
             "platform": "facebook",
             "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
             +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
+            +". \nOur customer care agent will get back to you shortly"
             +".\nWhat do you wanna do next?",
             "replies": [
               "Exit",
@@ -189,6 +192,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
             "platform": "facebook",
             "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
             +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
+            +". \nOur customer care agent will get back to you shortly"
             +".\nWhat do you wanna do next?",
             "replies": [
               "Exit",
@@ -233,6 +237,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
             "platform": "facebook",
             "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
             +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
+            +". \nOur customer care agent will get back to you shortly"
             +".\nWhat do you wanna do next?",
             "replies": [
               "Exit",
@@ -277,6 +282,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
             "platform": "facebook",
             "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
             +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
+            +". \nOur customer care agent will get back to you shortly"
             +".\nWhat do you wanna do next?",
             "replies": [
               "Exit",
