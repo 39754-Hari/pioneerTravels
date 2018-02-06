@@ -16,6 +16,8 @@ methods.createIncident =  function(userName,description, severity,input, callbac
           { short_description: description,
             caller_id: userName,
             sys_created_by: userName,
+            category: 'arrival',
+            subcategory: 'schedule',
             urgency: severity ,
             priority: severity,
             state: 2,
