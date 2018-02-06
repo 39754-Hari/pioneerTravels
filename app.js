@@ -271,7 +271,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
         };
       }
       else{
-        if (data.error != 'undifiend' && data.error.message == 'No Record found'){
+        /*if (data.error != 'undifiend' && data.error.message == 'No Record found'){
           resObj= {            
           "speech": "",
           "messages": [
@@ -287,7 +287,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
             ]
           }
         }
-        else{
+        else*/{
          resObj= {
           "speech": "Hi,Your Incident id is : "+req.body.result.parameters.incidentId,
           "displayText": "result",
