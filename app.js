@@ -266,148 +266,161 @@ app.post('/pioneerServiceNow', (req, res) =>{
   }
   if(req.body.result.action === 'incident_status'){
     console.log((req.body.result.parameters.incidentId).toLowerCase().indexOf('inc'));
+    var resObj = {}  ;
     if((req.body.result.parameters.incidentId).toLowerCase().indexOf('inc') > -1)
       {
         console.log('hiii');
-      }
-    var resObj = {}  ;
-    serviceNowApi.getIncident(req.body.result.parameters.incidentId,function(err,data) {
-      if (err) {
-        resObj={
-          "speech": "",
-          "messages": [
-            {
-            "type": 2,
-            "platform": "facebook",
-            "title": "Sorry! There was an error while processing your request. Please try again",
-            "replies": [
-              "Main menu"
-            ]
+        serviceNowApi.getIncident(req.body.result.parameters.incidentId,function(err,data) {
+          if (err) {
+            resObj={
+              "speech": "",
+              "messages": [
+                {
+                "type": 2,
+                "platform": "facebook",
+                "title": "Sorry! There was an error while processing your request. Please try again",
+                "replies": [
+                  "Main menu"
+                ]
+                }
+              ]
+            };
+          }
+          else{
+            if (data.error != 'undifiend' ){
+              if(data.error.message == 'No Record found'){
+                resObj= {            
+               "speech": "",
+               "messages": [
+                  {
+                "type": 2,
+                 "platform": "facebook",
+                 "title": "Entered incident id is not found!",
+                 "replies": [
+                  "Try Again",
+                  "Main Menu"
+                    ]
+                   }
+                ]
+                }
+              }
             }
-          ]
-        };
+            else{
+              var state = data.result[0].state;
+              if(state == 1){
+                resObj={
+                  "speech": "",
+                  "messages": [
+                    {
+                    "type": 2,
+                    "platform": "facebook",
+                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'New\'.\nWhat do you wanna do next?",
+                    "replies": [
+                      "Exit",
+                      "Main menu"
+                    ]
+                    }
+                  ]
+                };
+              }
+              else if(state == 2){
+                resObj={
+                  "speech": "",
+                  "messages": [
+                    {
+                    "type": 2,
+                    "platform": "facebook",
+                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'In Progress\'.\nWhat do you wanna do next?",
+                    "replies": [
+                      "Exit",
+                      "Main menu"
+                    ]
+                    }
+                  ]
+                };
+              }
+              else if(state == 3){
+                resObj={
+                  "speech": "",
+                  "messages": [
+                    {
+                    "type": 2,
+                    "platform": "facebook",
+                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'On Hold\'.\nWhat do you wanna do next?",
+                    "replies": [
+                      "Exit",
+                      "Main menu"
+                    ]
+                    }
+                  ]
+                };
+              }
+              else if(state == 6){
+                resObj={
+                  "speech": "",
+                  "messages": [
+                    {
+                    "type": 2,
+                    "platform": "facebook",
+                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'Resolved\'.\nWhat do you wanna do next?",
+                    "replies": [
+                      "Exit",
+                      "Main menu"
+                    ]
+                    }
+                  ]
+                };
+              }
+              else if(state == 7){
+                resObj={
+                  "speech": "",
+                  "messages": [
+                    {
+                    "type": 2,
+                    "platform": "facebook",
+                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'Closed\'.\nWhat do you wanna do next?",
+                    "replies": [
+                      "Exit",
+                      "Main menu"
+                    ]
+                    }
+                  ]
+                };
+              }
+              else if(state == 8){
+                resObj={
+                  "speech": "",
+                  "messages": [
+                    {
+                    "type": 2,
+                    "platform": "facebook",
+                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'Canceled\'.\nWhat do you wanna do next?",
+                    "replies": [
+                      "Exit",
+                      "Main menu"
+                    ]
+                    }
+                  ]
+                };
+              }          
+            }
+          }      
+          res.json(resObj);
+        }); 
       }
       else{
-        if (data.error != 'undifiend' ){
-          if(data.error.message == 'No Record found'){
-            resObj= {            
-           "speech": "",
-           "messages": [
-              {
-            "type": 2,
-             "platform": "facebook",
-             "title": "Entered incident id is not found!",
-             "replies": [
-              "Try Again",
-              "Main Menu"
-                ]
-               }
-            ]
-            }
-          }
-        }
-        else{
-          var state = data.result[0].state;
-          if(state == 1){
-            resObj={
-              "speech": "",
-              "messages": [
-                {
-                "type": 2,
-                "platform": "facebook",
-                "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'New\'.\nWhat do you wanna do next?",
-                "replies": [
-                  "Exit",
-                  "Main menu"
-                ]
+        return res.json({	 
+          speech:"",
+          displayText: "",
+             followupEvent: {
+                "name": "get_status_event",
+                "data": {                  
                 }
-              ]
-            };
-          }
-          else if(state == 2){
-            resObj={
-              "speech": "",
-              "messages": [
-                {
-                "type": 2,
-                "platform": "facebook",
-                "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'In Progress\'.\nWhat do you wanna do next?",
-                "replies": [
-                  "Exit",
-                  "Main menu"
-                ]
-                }
-              ]
-            };
-          }
-          else if(state == 3){
-            resObj={
-              "speech": "",
-              "messages": [
-                {
-                "type": 2,
-                "platform": "facebook",
-                "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'On Hold\'.\nWhat do you wanna do next?",
-                "replies": [
-                  "Exit",
-                  "Main menu"
-                ]
-                }
-              ]
-            };
-          }
-          else if(state == 6){
-            resObj={
-              "speech": "",
-              "messages": [
-                {
-                "type": 2,
-                "platform": "facebook",
-                "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'Resolved\'.\nWhat do you wanna do next?",
-                "replies": [
-                  "Exit",
-                  "Main menu"
-                ]
-                }
-              ]
-            };
-          }
-          else if(state == 7){
-            resObj={
-              "speech": "",
-              "messages": [
-                {
-                "type": 2,
-                "platform": "facebook",
-                "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'Closed\'.\nWhat do you wanna do next?",
-                "replies": [
-                  "Exit",
-                  "Main menu"
-                ]
-                }
-              ]
-            };
-          }
-          else if(state == 8){
-            resObj={
-              "speech": "",
-              "messages": [
-                {
-                "type": 2,
-                "platform": "facebook",
-                "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'Canceled\'.\nWhat do you wanna do next?",
-                "replies": [
-                  "Exit",
-                  "Main menu"
-                ]
-                }
-              ]
-            };
-          }          
-        }
-      }      
-      res.json(resObj);
-    });    
+             }
+          });
+       
+      }
+       
   }
 });
 
