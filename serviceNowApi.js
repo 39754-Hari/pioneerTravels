@@ -31,6 +31,7 @@ methods.createIncident =  function(userName,description, severity, callback){
           { short_description: description,
              caller_id: userName,
              urgency: severity ,
+             state: 2,
              comments: 'Created from dialogflow' },
           json: true };
             console.log('request body:',options);
