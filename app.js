@@ -51,7 +51,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
           "subtitle": "Hi "+req.body.result.parameters.userName +", Please note your incident id for future reference : "+data.result.number
           +". \nAn SMS will be sent to your Phone number "+req.body.result.parameters.phoneNumber
           +".\nWhat do you wanna do next?",
-          "imageUrl": "https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number,
+          "imageUrl": "https://dummyimage.com/300x150/fff/ff0015&text="+data.result.number,
           "buttons": [
             {
               "text": "Exit",
