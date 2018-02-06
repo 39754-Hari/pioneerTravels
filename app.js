@@ -37,7 +37,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
           "type": 2,
           "platform": "facebook",
           "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
-          +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
+          +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
           +".\nWhat do you wanna do next?",
           "replies": [
             "Exit",
@@ -89,19 +89,24 @@ app.post('/pioneerServiceNow', (req, res) =>{
       }
     else{
       resObj={
-      "speech": "",
-      "messages": [
-        {
-          "type": 2,
-          "platform": "facebook",
-          "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully and our service agent will get back to you within 48 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
-          +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
-          +".\nFor any queries regarding your issue, please call our customer care center. What do you want to do next?",
-          "replies": [
-            "Exit",
-            "Main menu"
-          ]
-        }
+        "speech": "",
+        "messages": [
+          {
+            "type": 3,
+            "platform": "facebook",
+            "imageUrl": "https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number
+          },
+          {
+            "type": 2,
+            "platform": "facebook",
+            "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
+            +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
+            +".\nWhat do you wanna do next?",
+            "replies": [
+              "Exit",
+              "Main menu"
+            ]
+          }
         ]
       };
     }
@@ -128,19 +133,24 @@ app.post('/pioneerServiceNow', (req, res) =>{
       }
     else{
       resObj={
-      "speech": "",
-      "messages": [
-        {
-          "type": 2,
-          "platform": "facebook",
-          "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully with high-priority and our service agent will get back to you within 24 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
-          +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
-          +".\nFor any queries regarding your issue, please call our customer care center. What do you want to do next?",
-          "replies": [
-            "Exit",
-            "Main menu"
-          ]
-        }
+        "speech": "",
+        "messages": [
+          {
+            "type": 3,
+            "platform": "facebook",
+            "imageUrl": "https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number
+          },
+          {
+            "type": 2,
+            "platform": "facebook",
+            "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
+            +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
+            +".\nWhat do you wanna do next?",
+            "replies": [
+              "Exit",
+              "Main menu"
+            ]
+          }
         ]
       };
     }
@@ -167,19 +177,24 @@ app.post('/pioneerServiceNow', (req, res) =>{
       }
     else{
       resObj={
-      "speech": "",
-      "messages": [
-        {
-          "type": 2,
-          "platform": "facebook",
-          "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully with high-priority and our service agent will get back to you within 24 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
-          +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
-          +".\nFor any queries regarding your issue, please call our customer care center. What do you want to do next?",
-          "replies": [
-            "Exit",
-            "Main menu"
-          ]
-        }
+        "speech": "",
+        "messages": [
+          {
+            "type": 3,
+            "platform": "facebook",
+            "imageUrl": "https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number
+          },
+          {
+            "type": 2,
+            "platform": "facebook",
+            "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
+            +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
+            +".\nWhat do you wanna do next?",
+            "replies": [
+              "Exit",
+              "Main menu"
+            ]
+          }
         ]
       };
     }
@@ -206,19 +221,24 @@ app.post('/pioneerServiceNow', (req, res) =>{
       }
     else{
       resObj={
-      "speech": "",
-      "messages": [
-        {
-          "type": 2,
-          "platform": "facebook",
-          "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully with high-priority and our service agent will get back to you within 24 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
-          +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
-          +".\nFor any queries regarding your issue, please call our customer care center. What do you want to do next?",
-          "replies": [
-            "Exit",
-            "Main menu"
-          ]
-        }
+        "speech": "",
+        "messages": [
+          {
+            "type": 3,
+            "platform": "facebook",
+            "imageUrl": "https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number
+          },
+          {
+            "type": 2,
+            "platform": "facebook",
+            "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
+            +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
+            +".\nWhat do you wanna do next?",
+            "replies": [
+              "Exit",
+              "Main menu"
+            ]
+          }
         ]
       };
     }
@@ -245,19 +265,24 @@ app.post('/pioneerServiceNow', (req, res) =>{
       }
     else{
       resObj={
-      "speech": "",
-      "messages": [
-        {
-          "type": 2,
-          "platform": "facebook",
-          "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully with high-priority and our service agent will get back to you within 24 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
-          +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
-          +".\nFor any queries regarding your issue, please call our customer care center. What do you want to do next?",
-          "replies": [
-            "Exit",
-            "Main menu"
-          ]
-        }
+        "speech": "",
+        "messages": [
+          {
+            "type": 3,
+            "platform": "facebook",
+            "imageUrl": "https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number
+          },
+          {
+            "type": 2,
+            "platform": "facebook",
+            "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
+            +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
+            +".\nWhat do you wanna do next?",
+            "replies": [
+              "Exit",
+              "Main menu"
+            ]
+          }
         ]
       };
     }
