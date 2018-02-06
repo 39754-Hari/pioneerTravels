@@ -29,7 +29,7 @@ methods.createIncident =  function(userName,description, severity,input, callbac
              'content-type': 'application/json' },
           body:
           { short_description: description,
-            Caller: userName,
+            caller_id: userName,
             sys_created_by: userName,
             urgency: severity ,
             priority: severity,
