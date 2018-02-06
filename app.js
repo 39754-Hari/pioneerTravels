@@ -322,7 +322,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
                 {
                 "type": 2,
                 "platform": "facebook",
-                "title": "Status of your incident id "+req.body.result.parameters.incidentId + "is : \'New\'.What do you wanna do next?",
+                "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + "is : \'New\'.\nWhat do you wanna do next?",
                 "replies": [
                   "Exit",
                   "Main menu"
@@ -339,7 +339,75 @@ app.post('/pioneerServiceNow', (req, res) =>{
                 {
                 "type": 2,
                 "platform": "facebook",
-                "title": "Status of your incident id "+req.body.result.parameters.incidentId + "is : \'In Progress\'.What do you wanna do next?",
+                "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + "is : \'In Progress\'.\nWhat do you wanna do next?",
+                "replies": [
+                  "Exit",
+                  "Main menu"
+                ]
+                }
+              ]
+            };
+          }
+          else if(state == 3){
+            console.log('Hiiii',state);
+            resObj={
+              "speech": "",
+              "messages": [
+                {
+                "type": 2,
+                "platform": "facebook",
+                "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + "is : \'On Hold\'.\nWhat do you wanna do next?",
+                "replies": [
+                  "Exit",
+                  "Main menu"
+                ]
+                }
+              ]
+            };
+          }
+          else if(state == 6){
+            console.log('Hiiii',state);
+            resObj={
+              "speech": "",
+              "messages": [
+                {
+                "type": 2,
+                "platform": "facebook",
+                "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + "is : \'Resolved\'.\nWhat do you wanna do next?",
+                "replies": [
+                  "Exit",
+                  "Main menu"
+                ]
+                }
+              ]
+            };
+          }
+          else if(state == 7){
+            console.log('Hiiii',state);
+            resObj={
+              "speech": "",
+              "messages": [
+                {
+                "type": 2,
+                "platform": "facebook",
+                "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + "is : \'Closed\'.\nWhat do you wanna do next?",
+                "replies": [
+                  "Exit",
+                  "Main menu"
+                ]
+                }
+              ]
+            };
+          }
+          else if(state == 8){
+            console.log('Hiiii',state);
+            resObj={
+              "speech": "",
+              "messages": [
+                {
+                "type": 2,
+                "platform": "facebook",
+                "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + "is : \'Canceled\'.\nWhat do you wanna do next?",
                 "replies": [
                   "Exit",
                   "Main menu"
