@@ -314,11 +314,8 @@ app.post('/pioneerServiceNow', (req, res) =>{
         else*/{
           console.log('state:: ',data.result[0].state);
           var state = data.result[0].state;
-          if(state == 2){
+          if(state == 1){
             console.log('Hiiii',state);
-          }
-          switch(state){
-            case 1:
             resObj={
               "speech": "",
               "messages": [
@@ -333,8 +330,9 @@ app.post('/pioneerServiceNow', (req, res) =>{
                 }
               ]
             };
-            break;
-            case 2:
+          }
+          else if(state == 2){
+            console.log('Hiiii',state);
             resObj={
               "speech": "",
               "messages": [
@@ -349,8 +347,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
                 }
               ]
             };
-            break;              
-          }
+          }          
         }
       }      
       res.json(resObj);
