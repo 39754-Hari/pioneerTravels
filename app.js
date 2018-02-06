@@ -441,8 +441,8 @@ app.post('/pioneerServiceNow', (req, res) =>{
       }
       else{
         return res.json({	 
-          speech:"Entered incident id is not valid.",
-          displayText: "",
+          speech:"",
+          displayText: "Entered incident id is not valid.",
              followupEvent: {
                 "name": "get_status_event",
                 "data": {                  
