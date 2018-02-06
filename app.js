@@ -288,7 +288,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
           }
         }
         else*/{
-          console.log('state:: ',data.result.state);
+          console.log('state:: ',data.result[0].state);
          resObj= {
           "speech": "Hi,Your Incident id is : "+req.body.result.parameters.incidentId,
           "displayText": "result",
