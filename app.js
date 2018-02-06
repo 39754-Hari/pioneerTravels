@@ -48,79 +48,209 @@ app.post('/pioneerServiceNow', (req, res) =>{
     });   
   } 
   if(req.body.result.action === 'create_incident_sub_category1-2'){    
+    var resObj = {}; 
     serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2',function(err,data){
-      var resObj = {
-        "speech": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully and our service agent will get back to you within 48 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
-        +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
-        +".\nFor any queries regarding your issue, please call our customer care center.",
-        "displayText": "result",
-        "data": {"result": "result"},
-        "source": "dialogflow"
+      if (err) {
+        resObj={
+          "speech": "",
+          "messages": [
+            {
+              "type": 2,
+              "platform": "facebook",
+              "title": "Sorry! There was an error while processing your request. Please try again",
+              "replies": [
+                "Main menu"
+              ]
+            }
+          ]
+        };
+      }
+    else{
+      resObj={
+      "speech": "",
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully and our service agent will get back to you within 48 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
+          +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
+          +".\nFor any queries regarding your issue, please call our customer care center. What do you want to do next?",
+          "replies": [
+            "Exit",
+            "Main menu"
+          ]
+        }
+        ]
       };
+    }
       console.log('response : ',res);
       console.log('resobj : ',resObj);
-      res.send(resObj);
+      res.json(resObj);
     });      
   }
   if(req.body.result.action === 'create_incident_sub_category2-1'){    
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2',function(err,data){
-      var resObj = {
-        "speech": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully and our service agent will get back to you within 48 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
-        +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
-        +".\nFor any queries regarding your issue, please call our customer care center.",
-        "displayText": "result",
-        "data": {"result": "result"},
-        "source": "dialogflow"
+    var resObj = {}; 
+    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1',function(err,data){
+      if (err) {
+        resObj={
+          "speech": "",
+          "messages": [
+            {
+              "type": 2,
+              "platform": "facebook",
+              "title": "Sorry! There was an error while processing your request. Please try again",
+              "replies": [
+                "Main menu"
+              ]
+            }
+          ]
+        };
+      }
+    else{
+      resObj={
+      "speech": "",
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully with high-priority and our service agent will get back to you within 24 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
+          +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
+          +".\nFor any queries regarding your issue, please call our customer care center. What do you want to do next?",
+          "replies": [
+            "Exit",
+            "Main menu"
+          ]
+        }
+        ]
       };
+    }
       console.log('response : ',res);
       console.log('resobj : ',resObj);
-      res.send(resObj);
+      res.json(resObj);
     }); 
   }  
   if(req.body.result.action === 'create_incident_sub_category2-2'){    
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2',function(err,data){
-      var resObj = {
-        "speech": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully and our service agent will get back to you within 48 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
-        +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
-        +".\nFor any queries regarding your issue, please call our customer care center.",
-        "displayText": "result",
-        "data": {"result": "result"},
-        "source": "dialogflow"
+    var resObj = {}; 
+    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1',function(err,data){
+      if (err) {
+        resObj={
+          "speech": "",
+          "messages": [
+            {
+              "type": 2,
+              "platform": "facebook",
+              "title": "Sorry! There was an error while processing your request. Please try again",
+              "replies": [
+                "Main menu"
+              ]
+            }
+          ]
+        };
+      }
+    else{
+      resObj={
+      "speech": "",
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully with high-priority and our service agent will get back to you within 24 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
+          +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
+          +".\nFor any queries regarding your issue, please call our customer care center. What do you want to do next?",
+          "replies": [
+            "Exit",
+            "Main menu"
+          ]
+        }
+        ]
       };
+    }
       console.log('response : ',res);
       console.log('resobj : ',resObj);
-      res.send(resObj);
-    }); 
+      res.json(resObj);
+    });
   }
   if(req.body.result.action === 'create_incident_sub_category3-1'){    
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2',function(err,data){
-      var resObj = {
-        "speech": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully and our service agent will get back to you within 48 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
-        +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
-        +".\nFor any queries regarding your issue, please call our customer care center.",
-        "displayText": "result",
-        "data": {"result": "result"},
-        "source": "dialogflow"
+    var resObj = {}; 
+    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1',function(err,data){
+      if (err) {
+        resObj={
+          "speech": "",
+          "messages": [
+            {
+              "type": 2,
+              "platform": "facebook",
+              "title": "Sorry! There was an error while processing your request. Please try again",
+              "replies": [
+                "Main menu"
+              ]
+            }
+          ]
+        };
+      }
+    else{
+      resObj={
+      "speech": "",
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully with high-priority and our service agent will get back to you within 24 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
+          +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
+          +".\nFor any queries regarding your issue, please call our customer care center. What do you want to do next?",
+          "replies": [
+            "Exit",
+            "Main menu"
+          ]
+        }
+        ]
       };
+    }
       console.log('response : ',res);
       console.log('resobj : ',resObj);
-      res.send(resObj);
-    }); 
+      res.json(resObj);
+    });
   }
   if(req.body.result.action === 'create_incident_sub_category3-2'){    
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2',function(err,data){
-      var resObj = {
-        "speech": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully and our service agent will get back to you within 48 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
-        +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
-        +".\nFor any queries regarding your issue, please call our customer care center.",
-        "displayText": "result",
-        "data": {"result": "result"},
-        "source": "dialogflow"
+    var resObj = {}; 
+    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1',function(err,data){
+      if (err) {
+        resObj={
+          "speech": "",
+          "messages": [
+            {
+              "type": 2,
+              "platform": "facebook",
+              "title": "Sorry! There was an error while processing your request. Please try again",
+              "replies": [
+                "Main menu"
+              ]
+            }
+          ]
+        };
+      }
+    else{
+      resObj={
+      "speech": "",
+      "messages": [
+        {
+          "type": 2,
+          "platform": "facebook",
+          "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully with high-priority and our service agent will get back to you within 24 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
+          +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
+          +".\nFor any queries regarding your issue, please call our customer care center. What do you want to do next?",
+          "replies": [
+            "Exit",
+            "Main menu"
+          ]
+        }
+        ]
       };
+    }
       console.log('response : ',res);
       console.log('resobj : ',resObj);
-      res.send(resObj);
-    }); 
+      res.json(resObj);
+    });
   }
   if(req.body.result.action === 'incident_status'){
     var resObj = {}  ;
