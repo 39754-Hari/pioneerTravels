@@ -8,7 +8,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   console.log('initial req:',req.body);
   if(req.body.result.action === 'create_incident_sub_category1-1'){   
     var resObj = {}; 
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2','',function(err,data){
+    serviceNowApi.createIncident(req.body.result.parameters,'2',function(err,data){
       if (err) {
         resObj={
           "speech": "",
@@ -28,7 +28,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
       resObj={
       "speech": "",
       "messages": [
-        /*{
+        {
           "type": 3,
           "platform": "facebook",
           "imageUrl": "https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number
@@ -36,15 +36,15 @@ app.post('/pioneerServiceNow', (req, res) =>{
         {
           "type": 2,
           "platform": "facebook",
-          "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully and our service agent will get back to you within 48 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
+          "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
           +". \nAn acknowledgement SMS will be sent to you with incident id to your Phone number "+req.body.result.parameters.phoneNumber
-          +".\nFor any queries regarding your issue, please call our customer care center. What do you want to do next?",
+          +".\nWhat do you wanna do next?",
           "replies": [
             "Exit",
             "Main menu"
           ]
-        }*/
-        {
+        }
+        /*{
           "type": 1,
           "platform": "facebook",
           "title": "Your Incident has been raised successfully",
@@ -62,7 +62,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
               "postback": "Main menu"
             }
           ]
-        }
+        }*/
         ]
       };
     }
@@ -71,7 +71,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   } 
   if(req.body.result.action === 'create_incident_sub_category1-2'){    
     var resObj = {}; 
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2','',function(err,data){
+    serviceNowApi.createIncident(req.body.result.parameters,'2',function(err,data){
       if (err) {
         resObj={
           "speech": "",
@@ -110,7 +110,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   }
   if(req.body.result.action === 'create_incident_sub_category2-1'){    
     var resObj = {}; 
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1','',function(err,data){
+    serviceNowApi.createIncident(req.body.result.parameters,'1',function(err,data){
       if (err) {
         resObj={
           "speech": "",
@@ -149,7 +149,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   }  
   if(req.body.result.action === 'create_incident_sub_category2-2'){    
     var resObj = {}; 
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1','',function(err,data){
+    serviceNowApi.createIncident(req.body.result.parameters,'1',function(err,data){
       if (err) {
         resObj={
           "speech": "",
@@ -188,7 +188,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   }
   if(req.body.result.action === 'create_incident_sub_category3-1'){    
     var resObj = {}; 
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1',req.body.result.parameters.transactionNumber,function(err,data){
+    serviceNowApi.createIncident(req.body.result.parameters,'1',function(err,data){
       if (err) {
         resObj={
           "speech": "",
@@ -227,7 +227,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   }
   if(req.body.result.action === 'create_incident_sub_category3-2'){    
     var resObj = {}; 
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1',req.body.result.parameters.transactionNumber,function(err,data){
+    serviceNowApi.createIncident(req.body.result.parameters,'1',function(err,data){
       if (err) {
         resObj={
           "speech": "",

@@ -3,21 +3,29 @@ var request = require("request");
 
 var methods={};
 
-methods.createIncident =  function(userName,description, severity,input, callback){
+var apiUrl = 'https://dev18442.service-now.com/api/now/v1/table/incident';
+
+methods.createIncident =  function(params, severity, callback){
         console.log("The Final Message Utterance to send POST as Query to Service Now");
+        if(params.transactionNumber != 'undefined'){
+            var input = params.transactionNumber;
+        }
+        else{
+            var input = '';
+        }
         var options = { method: 'POST',
-          url: 'https://dev18442.service-now.com/api/now/v1/table/incident',
+          url: apiUrl,
           headers:
            { 'postman-token': 'd6253bf3-ff31-fb21-7741-3dd02c84e8bb',
              'cache-control': 'no-cache',
              authorization: 'Basic MzMyMzg6YWJjMTIz',
              'content-type': 'application/json' },
           body:
-          { short_description: description,
-            caller_id: userName,
-            sys_created_by: userName,
-            category: 'busschedule',
-            subcategory: 'boardingpoint',
+          { short_description: params.short_description,
+            caller_id: params.userName,
+            sys_created_by: params.userName,
+            category: params.category,
+            subcategory: params.subcategory,
             urgency: severity ,
             priority: severity,
             state: 2,
