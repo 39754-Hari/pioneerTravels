@@ -313,7 +313,11 @@ app.post('/pioneerServiceNow', (req, res) =>{
         }
         else*/{
           console.log('state:: ',data.result[0].state);
-          switch(data.result[0].state){
+          var state = data.result[0].state;
+          if(state == 2){
+            console.log('Hiiii',state);
+          }
+          switch(state){
             case 1:
             resObj={
               "speech": "",
