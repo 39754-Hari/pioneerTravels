@@ -328,7 +328,24 @@ app.post('/pioneerServiceNow', (req, res) =>{
                 ]
                 }
               ]
-            };              
+            };
+            break;
+            case 2:
+            resObj={
+              "speech": "",
+              "messages": [
+                {
+                "type": 2,
+                "platform": "facebook",
+                "title": "Status of your incident id "+req.body.result.parameters.incidentId + "is : \'In Progress\'.What do you wanna do next?",
+                "replies": [
+                  "Exit",
+                  "Main menu"
+                ]
+                }
+              ]
+            };
+            break;              
           }
         }
       }      
