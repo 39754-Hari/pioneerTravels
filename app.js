@@ -440,14 +440,19 @@ app.post('/pioneerServiceNow', (req, res) =>{
         }); 
       }
       else{
-        return res.json({	 
-          speech:"Entered incident id is not valid.",
-          displayText: "Entered incident id is not valid.",
-             followupEvent: {
-                "name": "get_status_event",
-                "data": {                  
-                }
-             }
+        return res.json({           
+          "speech": "",
+          "messages": [
+             {
+           "type": 2,
+            "platform": "facebook",
+            "title": "Entered incident id is invalid try with valid one!",
+            "replies": [
+             "Try Again",
+             "Main Menu"
+               ]
+              }
+           ]
           });
        
       }
