@@ -142,11 +142,19 @@ app.post('/pioneerServiceNow', (req, res) =>{
       }
       else{
         if (data.error != 'undifiend' && data.error.message == 'No Record found'){
-          resObj= {
-          "speech": "Hi,Your Incident id is : "+req.body.result.parameters.incidentId + ",Not Found",
-          "displayText": "result",
-          "data": {"result": "result"},
-          "source": "dialogflow"
+          resObj= {            
+          "speech": "",
+          "messages": [
+            {
+            "type": 2,
+            "platform": "facebook",
+            "title": "Entered incident id is not found. Please try again",
+            "replies": [
+              "Try Again",
+              "Main Menu"
+            ]
+            }
+            ]
           }
         }
         else{
