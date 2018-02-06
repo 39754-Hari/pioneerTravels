@@ -21,7 +21,7 @@ methods.createIncident =  function(params, severity, callback){
              authorization: 'Basic MzMyMzg6YWJjMTIz',
              'content-type': 'application/json' },
           body:
-          { short_description: params.short_description,
+          { short_description: params.issueDescription,
             caller_id: params.userName,
             sys_created_by: params.userName,
             category: params.category,
