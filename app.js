@@ -313,11 +313,22 @@ app.post('/pioneerServiceNow', (req, res) =>{
         }
         else*/{
           console.log('state:: ',data.result[0].state);
-         resObj= {
-          "speech": "Hi,Your Incident id is : "+req.body.result.parameters.incidentId,
-          "displayText": "result",
-          "data": {"result": "result"},
-          "source": "dialogflow"
+          switch(data.result[0].state){
+            case 1:
+            resObj={
+              "speech": "",
+              "messages": [
+                {
+                "type": 2,
+                "platform": "facebook",
+                "title": "Status of your incident id "+req.body.result.parameters.incidentId + "is : \'New\'.What do you wanna do next?",
+                "replies": [
+                  "Exit",
+                  "Main menu"
+                ]
+                }
+              ]
+            };              
           }
         }
       }      
