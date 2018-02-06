@@ -28,7 +28,12 @@ app.post('/pioneerServiceNow', (req, res) =>{
       resObj={
       "speech": "",
       "messages": [
-        /*{
+        {
+          "type": 3,
+          "platform": "facebook",
+          "imageUrl": "https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number
+        },
+        {
           "type": 2,
           "platform": "facebook",
           "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully and our service agent will get back to you within 48 hours regarding your issue. Please note your incident id for future reference : "+data.result.number
@@ -38,8 +43,8 @@ app.post('/pioneerServiceNow', (req, res) =>{
             "Exit",
             "Main menu"
           ]
-        }*/
-        {
+        }
+        /*{
           "type": 1,
           "platform": "facebook",
           "title": "Your Incident has been raised successfully",
@@ -57,7 +62,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
               "postback": "Main menu"
             }
           ]
-        }
+        }*/
         ]
       };
     }
