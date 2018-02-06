@@ -287,8 +287,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
             };
           }
           else{
-            if (data.error != 'undifiend' ){
-              if(data.error.message == 'No Record found'){
+            if (data.error != 'undefined' && data.error.message == 'No Record found' ){
                 resObj= {            
                "speech": "",
                "messages": [
@@ -303,7 +302,6 @@ app.post('/pioneerServiceNow', (req, res) =>{
                    }
                 ]
                 }
-              }
             }
             else{
               var state = data.result[0].state;
