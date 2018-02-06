@@ -100,7 +100,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   if(req.body.result.action === 'incident_status'){  
     serviceNowApi.getIncident(req.body.result.parameters.incidentId,function(err,data) {
       console.log('After call',data.error)
-      /*if (data.error.message == 'No Record found'){
+      if (data.error.message != 'undifiend' && data.error.message == 'No Record found'){
         var resObj= {
           "speech": "Hi,Your Incident id is : "+req.body.result.parameters.incidentId + ",Not Found",
           "displayText": "result",
@@ -115,7 +115,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
           "data": {"result": "result"},
           "source": "dialogflow"
         }
-      }*/
+      }
       
       //res.send(resObj)
     } );
