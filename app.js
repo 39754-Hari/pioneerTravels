@@ -8,7 +8,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   console.log(req.body);
   if(req.body.result.action === 'create_incident_sub_category1-1'){   
     var resObj = {}; 
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2',function(err,data){
+    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2','',function(err,data){
       if (err) {
         resObj={
           "speech": "",
@@ -49,7 +49,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   } 
   if(req.body.result.action === 'create_incident_sub_category1-2'){    
     var resObj = {}; 
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2',function(err,data){
+    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'2','',function(err,data){
       if (err) {
         resObj={
           "speech": "",
@@ -90,7 +90,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   }
   if(req.body.result.action === 'create_incident_sub_category2-1'){    
     var resObj = {}; 
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1',function(err,data){
+    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1','',function(err,data){
       if (err) {
         resObj={
           "speech": "",
@@ -131,7 +131,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   }  
   if(req.body.result.action === 'create_incident_sub_category2-2'){    
     var resObj = {}; 
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1',function(err,data){
+    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1','',function(err,data){
       if (err) {
         resObj={
           "speech": "",
@@ -172,7 +172,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   }
   if(req.body.result.action === 'create_incident_sub_category3-1'){    
     var resObj = {}; 
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1',function(err,data){
+    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1',req.body.result.parameters.transactionNumber,function(err,data){
       if (err) {
         resObj={
           "speech": "",
@@ -213,7 +213,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   }
   if(req.body.result.action === 'create_incident_sub_category3-2'){    
     var resObj = {}; 
-    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1',function(err,data){
+    serviceNowApi.createIncident(req.body.result.parameters.userName,req.body.result.parameters.issueDescription,'1',req.body.result.parameters.transactionNumber,function(err,data){
       if (err) {
         resObj={
           "speech": "",

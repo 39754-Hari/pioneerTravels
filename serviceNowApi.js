@@ -18,7 +18,7 @@ var request = require("request");
 
 var methods={};
 
-methods.createIncident =  function(userName,description, severity, callback){
+methods.createIncident =  function(userName,description, severity,input, callback){
         console.log("The Final Message Utterance to send POST as Query to Service Now");
         var options = { method: 'POST',
           url: 'https://dev18442.service-now.com/api/now/v1/table/incident',
@@ -29,10 +29,13 @@ methods.createIncident =  function(userName,description, severity, callback){
              'content-type': 'application/json' },
           body:
           { short_description: description,
-             caller_id: userName,
-             urgency: severity ,
-             state: 2,
-             comments: 'Created from dialogflow' },
+            Caller: userName,
+            sys_created_by: userName,
+            urgency: severity ,
+            priority: severity,
+            state: 2,
+            user_input: input,
+            comments: 'Created from dialogflow' },
           json: true };
             console.log('request body:',options);
         request(options, function (error, response, body) {
