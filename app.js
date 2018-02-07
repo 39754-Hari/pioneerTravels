@@ -346,7 +346,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
                     {
                     "type": 2,
                     "platform": "facebook",
-                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'New\'.\nWhat do you wanna do next?",
+                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'New\' and updated on "+data.result[0].sys_updated_on+".\nWhat do you wanna do next?",
                     "replies": [
                       "Exit",
                       "Main menu"
@@ -362,7 +362,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
                     {
                     "type": 2,
                     "platform": "facebook",
-                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'In Progress\'.\nWhat do you wanna do next?",
+                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'In Progress\' and updated on "+data.result[0].sys_updated_on+".\nWhat do you wanna do next?",
                     "replies": [
                       "Exit",
                       "Main menu"
@@ -378,7 +378,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
                     {
                     "type": 2,
                     "platform": "facebook",
-                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'On Hold\'.\nWhat do you wanna do next?",
+                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'On Hold\' and updated on "+data.result[0].sys_updated_on+".\nWhat do you wanna do next?",
                     "replies": [
                       "Exit",
                       "Main menu"
@@ -394,7 +394,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
                     {
                     "type": 2,
                     "platform": "facebook",
-                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'Resolved\'.\nWhat do you wanna do next?",
+                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'Resolved\' and updated on "+data.result[0].sys_updated_on+".\nWhat do you wanna do next?",
                     "replies": [
                       "Exit",
                       "Main menu"
@@ -410,7 +410,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
                     {
                     "type": 2,
                     "platform": "facebook",
-                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'Closed\'.\nWhat do you wanna do next?",
+                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'Closed\' and updated on "+data.result[0].sys_updated_on+".\nWhat do you wanna do next?",
                     "replies": [
                       "Exit",
                       "Main menu"
@@ -426,7 +426,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
                     {
                     "type": 2,
                     "platform": "facebook",
-                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'Canceled\'.\nWhat do you wanna do next?",
+                    "title": "Status of your incident id \n"+req.body.result.parameters.incidentId + " is : \'Canceled\' and updated on "+data.result[0].sys_updated_on+".\nWhat do you wanna do next?",
                     "replies": [
                       "Exit",
                       "Main menu"
