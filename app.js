@@ -318,7 +318,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
             };
           }
           else{
-            if (typeOf(data.error) != 'undefined' ){
+            if (typeof(data.error) != 'undefined' ){
               console.log('hiii::',data.error);
               if(data.error.message == 'No Record found'){
                 resObj= {            
