@@ -458,7 +458,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
         }); 
       }
       else{
-        return res.json({           
+        /*return res.json({           
           "speech": "",
           "messages": [
              {
@@ -472,16 +472,17 @@ app.post('/pioneerServiceNow', (req, res) =>{
                ]
               }
            ]
-          });
-          /*return res.json({	 
+          });*/
+          return res.json({	 
  	          speech:"Entered incident id is invalid.Enter a valid one!",
  	          displayText: "Entered incident id is invalid.Enter a valid one!",
  	          followupEvent: {
  	            "name": "get_status_event ",
- 	            "data": { 	        
+ 	            "data": { 
+                 "incidentId" : ""
  	            }
  	          }
- 	        });*/
+ 	        });
 
        
       }
