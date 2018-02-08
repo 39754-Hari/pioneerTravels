@@ -470,6 +470,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
           });
       }
       else{
+        console.log('Inside elseee');
         /*return res.json({           
           "speech": "",
           "messages": [
