@@ -44,6 +44,23 @@ app.post('/pioneerServiceNow', (req, res) =>{
             "Exit",
             "Main menu"
           ]
+        },
+        {
+          "type": 3,
+          "platform": "slack",
+          "imageUrl": "https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number
+        },
+        {
+          "type": 2,
+          "platform": "slack",
+          "title": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
+          +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
+          +". \nOur customer care agent will get back to you shortly"
+          +".\nWhat do you wanna do next?",
+          "replies": [
+            "Exit",
+            "Main menu"
+          ]
         }
         /*{
           "type": 1,
