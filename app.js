@@ -315,7 +315,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   if(req.body.result.action === 'incident_status'){
     console.log((req.body.result.parameters.incidentId).toLowerCase().indexOf('inc'));
     var resObj = {}  ;
-    if((req.body.result.parameters.incidentId).toLowerCase().indexOf('inc') > -1 )
+    if((req.body.result.parameters.incidentId).toLowerCase().indexOf('inc') > -1  )
       {
         console.log('hiii');
         serviceNowApi.getIncident(req.body.result.parameters.incidentId,function(err,data) {
@@ -457,7 +457,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
           res.json(resObj);
         }); 
       }
-      else if( (req.body.result.parameters.incidentId).toLowerCase().indexOf('exit') == 0){
+      else if( (req.body.result.parameters.incidentId).toLowerCase().indexOf('exit') == 0 || (req.body.result.parameters.incidentId) == ''){
           return res.json({	 
             speech:"",
             displayText: "",
