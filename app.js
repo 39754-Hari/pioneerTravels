@@ -3,6 +3,7 @@ const app = express()
 const bodyparser = require('body-parser')
 var serviceNowApi = require('./serviceNowApi.js')
 var facebook = require('./facebook.js')
+var slack = require('./slack.js')
 app.use(bodyparser.json());
 
 app.post('/pioneerServiceNow', (req, res) =>{ 
@@ -10,7 +11,10 @@ app.post('/pioneerServiceNow', (req, res) =>{
   if(req.body.originalRequest.source === 'facebook'){
     facebook.operation(req,res);
   }
-  
+  else if(req.body.originalRequest.source === 'slack'){
+    slack.operation(req,res);
+  }
+
   /*if(req.body.result.action === 'create_incident_sub_category1-1'){   
     var resObj = {}; 
     serviceNowApi.createIncident(req.body.result.parameters,'2',function(err,data){

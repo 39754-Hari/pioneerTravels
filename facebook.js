@@ -57,26 +57,7 @@ if(req.body.result.action === 'create_incident_sub_category1-1'){
             "Exit",
             "Main menu"
           ]
-        }
-        /*{
-          "type": 1,
-          "platform": "facebook",
-          "title": "Your Incident has been raised successfully",
-          "subtitle": "Hi "+req.body.result.parameters.userName +", Please note your incident id for future reference : "+data.result.number
-          +". \nAn SMS will be sent to your Phone number "+req.body.result.parameters.phoneNumber
-          +".\nWhat do you wanna do next?",
-          "imageUrl": "https://dummyimage.com/300x150/fff/ff0015&text="+data.result.number,
-          "buttons": [
-            {
-              "text": "Exit",
-              "postback": "Exit"
-            },
-            {
-              "text": "Main menu",
-              "postback": "Main menu"
-            }
-          ]
-        }*/
+        }        
         ]
       };
     }
