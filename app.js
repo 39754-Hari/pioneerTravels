@@ -17,10 +17,10 @@ app.post('/pioneerServiceNow', (req, res) =>{
     slack.operation(req,res);
   }
   else if(req.body.originalRequest.source === 'google'){    
-    const app = new ActionsSdkApp({ request: req, response: res });
-    const intent = app.getIntent();
+    const googleApp = new ActionsSdkApp({ request: req, response: res });
+    const intent = googleApp.getIntent();
     console.log('intent',intent);
-    app.handleRequest(google);
+    googleApp.handleRequest(google);
     //google.operation(req,res);
   }
 });
