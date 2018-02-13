@@ -5,17 +5,17 @@ var googleAssistantFunction={};
 googleAssistantFunction.operation = function(req,res){
     const app = new ActionsSdkApp({ request: req, response: res });
     var resObj = {}; 
-    resObj={
-        "speech": "",
-        "messages": [
-          {            
-          "type": "simple_response",
-          "platform": "google",
-          "textToSpeech": "Hi,Welcome to Pioneer Travels ServiceNow.Reached end"
-          }
-        ]
-      };
-      return res.json(resObj);
+    // resObj={
+    //     "speech": "",
+    //     "messages": [
+    //       {            
+    //       "type": "simple_response",
+    //       "platform": "google",
+    //       "textToSpeech": "Hi,Welcome to Pioneer Travels ServiceNow.Reached end"
+    //       }
+    //     ]
+    //   };
+    //   return res.json(resObj);
       if(req.body.result.action === 'create_incident_sub_category1-1'){   
         var resObj = {}; 
         serviceNowApi.createIncident(req.body.result.parameters,'2',function(err,data){
