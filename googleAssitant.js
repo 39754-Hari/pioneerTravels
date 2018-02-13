@@ -608,7 +608,7 @@ googleAssistantFunction.operation = function(req,res){
     });*/
 }
 
-createScheduleIncident = (app)=>{
+let createScheduleIncident = (app)=>{
     console.log('Inside successful');
         serviceNowApi.createIncident(req.body.result.parameters,'2',function(err,data){
           if (err) {
