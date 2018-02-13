@@ -18,6 +18,8 @@ app.post('/pioneerServiceNow', (req, res) =>{
   }
   else if(req.body.originalRequest.source === 'google'){    
     const app = new ActionsSdkApp({ request: req, response: res });
+    const intent = app.getIntent();
+    console.log('intent',intent);
     app.handleRequest(google);
     //google.operation(req,res);
   }
