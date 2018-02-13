@@ -2,11 +2,15 @@ const express = require('express')
 const app = express()
 const bodyparser = require('body-parser')
 var serviceNowApi = require('./serviceNowApi.js')
+var facebook = require('./facebook.js')
 app.use(bodyparser.json());
 
 app.post('/pioneerServiceNow', (req, res) =>{ 
   console.log('initial req:',req.body.originalRequest.source);
-  if(req.body.result.action === 'create_incident_sub_category1-1'){   
+  if(req.body.originalRequest.source == 'facebook'){
+    facebook.operation(req,res);
+  }
+  /*if(req.body.result.action === 'create_incident_sub_category1-1'){   
     var resObj = {}; 
     serviceNowApi.createIncident(req.body.result.parameters,'2',function(err,data){
       if (err) {
@@ -86,7 +90,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
     }
       res.json(resObj);
     });   
-  } 
+  } */
   if(req.body.result.action === 'create_incident_sub_category1-2'){    
     var resObj = {}; 
     serviceNowApi.createIncident(req.body.result.parameters,'2',function(err,data){
