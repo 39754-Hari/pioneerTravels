@@ -4,7 +4,7 @@ const bodyparser = require('body-parser')
 var serviceNowApi = require('./serviceNowApi.js')
 var facebook = require('./facebook.js')
 var slack = require('./slack.js')
-var google = require('./googleAssistant.js')
+var google = require('./googleAssitant.js')
 app.use(bodyparser.json());
 
 app.post('/pioneerServiceNow', (req, res) =>{ 
