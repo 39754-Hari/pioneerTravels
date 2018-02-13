@@ -9,7 +9,7 @@ const { ActionsSdkApp } = require('actions-on-google');
 app.use(bodyparser.json());
 
 app.post('/pioneerServiceNow', (req, res) =>{ 
-  console.log('initial req:',req.body.originalRequest.source);
+  console.log('initial req:',req.body);
   if(req.body.originalRequest.source === 'facebook'){
     facebook.operation(req,res);
   }
