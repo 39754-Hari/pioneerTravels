@@ -11,7 +11,7 @@ googleAssistantFunction.operation = function(req,res){
           {            
           "type": "simple_response",
           "platform": "google",
-          "textToSpeech": "Hi,Welcome to Pioneer Travels ServiceNow"
+          "textToSpeech": "Hi,Welcome to Pioneer Travels ServiceNow.Reached end"
           }
         ]
       };
