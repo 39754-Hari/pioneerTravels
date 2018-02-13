@@ -3,7 +3,6 @@ var serviceNowApi = require('./serviceNowApi.js')
 var googleAssistantFunction={};
 
 googleAssistantFunction.operation = function(req,res){
-    const app = new ActionsSdkApp({ request: req, response: res });
     var resObj = {}; 
     // resObj={
     //     "speech": "",
@@ -16,7 +15,7 @@ googleAssistantFunction.operation = function(req,res){
     //     ]
     //   };
     //   return res.json(resObj);
-      if(req.body.result.action === 'create_incident_sub_category1-1'){   
+      /*if(req.body.result.action === 'create_incident_sub_category1-1'){   
         var resObj = {}; 
         serviceNowApi.createIncident(req.body.result.parameters,'2',function(err,data){
           if (err) {
@@ -70,7 +69,7 @@ googleAssistantFunction.operation = function(req,res){
         }
           res.json(resObj);
         });   
-      }
+      }*/
       if(req.body.result.action === 'create_incident_sub_category1-2'){    
         var resObj = {}; 
         serviceNowApi.createIncident(req.body.result.parameters,'2',function(err,data){
@@ -608,4 +607,72 @@ googleAssistantFunction.operation = function(req,res){
     displayText: 'Howdy! welcome '
     });*/
 }
-module.exports = googleAssistantFunction;
+
+createScheduleIncident = (app)=>{
+    console.log('Inside successful');
+        serviceNowApi.createIncident(req.body.result.parameters,'2',function(err,data){
+          if (err) {
+            resObj={
+              "speech": "",
+              "messages": [
+                {
+                  "type": "simple_response",
+                  "platform": "google",
+                  "textToSpeech": "Sorry! There was an error while processing your request. Please try again"
+                },
+                {
+                    "type": "suggestion_chips",
+                    "platform": "google",
+                    "suggestions": [
+                      {
+                        "title": "Main menu"
+                      }
+                    ]
+                  }
+              ]
+            };            
+          }
+        else{
+          /*resObj={
+          "speech": "",
+          "messages": [
+            {
+              "type": "simple_response",
+              "platform": "google",
+              "textToSpeech":"Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully, please find the details on screen ",
+              "displayText": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
+              +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
+              +". \nOur customer care agent will get back to you shortly"
+              +".\nWhat do you wanna do next?"
+            },
+            {
+                "type": "suggestion_chips",
+                "platform": "google",
+                "suggestions": [
+                {
+                    "title": "Exit"
+                },
+                {
+                   "title": "Main menu"
+                }
+                ]
+              }
+            ]
+          };*/
+          app.ask({
+            speech: "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully, please find the details on screen ",
+            displayText: "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
+            +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
+            +". \nOur customer care agent will get back to you shortly"
+            +".\nWhat do you wanna do next?"
+          });
+        }
+          //res.json(resObj);
+        });   
+      }
+
+
+const actionMap = new Map();
+actionMap.set('create_incident_sub_category1-1',createScheduleIncident);
+module.exports = actionMap;
+//module.exports = googleAssistantFunction;
