@@ -10,6 +10,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
   if(req.body.originalRequest.source === 'facebook'){
     facebook.operation(req,res);
   }
+  
   /*if(req.body.result.action === 'create_incident_sub_category1-1'){   
     var resObj = {}; 
     serviceNowApi.createIncident(req.body.result.parameters,'2',function(err,data){
