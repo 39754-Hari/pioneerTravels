@@ -5,7 +5,7 @@ var serviceNowApi = require('./serviceNowApi.js')
 app.use(bodyparser.json());
 
 app.post('/pioneerServiceNow', (req, res) =>{ 
-  console.log('initial req:',req.body);
+  console.log('initial req:',req.body.originalRequest.source);
   if(req.body.result.action === 'create_incident_sub_category1-1'){   
     var resObj = {}; 
     serviceNowApi.createIncident(req.body.result.parameters,'2',function(err,data){
@@ -495,9 +495,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
                  "incidentId" : ""
  	            }
  	          }
- 	        });
-
-       
+ 	        });      
       }
     }  
        
