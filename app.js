@@ -7,7 +7,7 @@ app.use(bodyparser.json());
 
 app.post('/pioneerServiceNow', (req, res) =>{ 
   console.log('initial req:',req.body.originalRequest.source);
-  if(req.body.originalRequest.source == 'facebook'){
+  if(req.body.originalRequest.source === 'facebook'){
     facebook.operation(req,res);
   }
   /*if(req.body.result.action === 'create_incident_sub_category1-1'){   
