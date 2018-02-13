@@ -5,7 +5,7 @@ var serviceNowApi = require('./serviceNowApi')
 var facebook = require('./facebook')
 var slack = require('./slack')
 var google = require('./googleAssitant')
-const { ActionsSdkApp } = require('actions-on-google');
+const { DialogflowApp } = require('actions-on-google');
 app.use(bodyparser.json());
 
 app.post('/pioneerServiceNow', (req, res) =>{ 
@@ -17,9 +17,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
     slack.operation(req,res);
   }
   else if(req.body.originalRequest.source === 'google'){    
-    const googleApp = new ActionsSdkApp({ request: req, response: res });
-    const intent = googleApp.getIntent();
-    console.log('intent',intent);
+    const googleApp = new DialogflowApp({ request: req, response: res });
     googleApp.handleRequest(google);
     //google.operation(req,res);
   }
