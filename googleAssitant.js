@@ -673,6 +673,6 @@ createScheduleIncident = (app)=>{
 
 
 const actionMap = new Map();
-actionMap.set('create_incident_sub_category1-1',createScheduleIncident);
+actionMap.set('create_incident_sub_category1-1', createScheduleIncident);
 module.exports = actionMap;
 //module.exports = googleAssistantFunction;
