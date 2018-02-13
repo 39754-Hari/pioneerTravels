@@ -52,7 +52,8 @@ googleAssistantFunction.operation = function(req,res){
             {
               "type": "simple_response",
               "platform": "google",
-              "textToSpeech": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
+              "textToSpeech":"Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully, please find the details on screen ",
+              "displayText": "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
               +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
               +". \nOur customer care agent will get back to you shortly"
               +".\nWhat do you wanna do next?"
