@@ -70,7 +70,7 @@ let createBoardingIncident = (app)=>{
           +". \nOur customer care agent will get back to you shortly"
           +".\nWhat do you wanna do next?")
             .setTitle("Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully.")
-            .setImage("https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number, data.result.number)
+            .setImage("https://dummyimage.com/700x400/fff/ff0015&text="+data.result.number, data.result.number)
             .setImageDisplay('CROPPED')
           )          
           .addSuggestions(['Exit', 'Main Menu'])              
@@ -95,7 +95,7 @@ let createMainatenceIncident = (app)=>{
           +". \nOur customer care agent will get back to you shortly"
           +".\nWhat do you wanna do next?")
             .setTitle("Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully.")
-            .setImage("https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number, data.result.number)
+            .setImage("https://dummyimage.com/700x400/fff/ff0015&text="+data.result.number, data.result.number)
             .setImageDisplay('CROPPED')
           )          
           .addSuggestions(['Exit', 'Main Menu'])              
@@ -120,7 +120,7 @@ let createHospitalityIncident = (app)=>{
           +". \nOur customer care agent will get back to you shortly"
           +".\nWhat do you wanna do next?")
             .setTitle("Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully.")
-            .setImage("https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number, data.result.number)
+            .setImage("https://dummyimage.com/700x400/fff/ff0015&text="+data.result.number, data.result.number)
             .setImageDisplay('CROPPED')
           )          
           .addSuggestions(['Exit', 'Main Menu'])              
@@ -145,7 +145,7 @@ let createFailedPaymentIncident = (app)=>{
           +". \nOur customer care agent will get back to you shortly"
           +".\nWhat do you wanna do next?")
             .setTitle("Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully.")
-            .setImage("https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number, data.result.number)
+            .setImage("https://dummyimage.com/700x400/fff/ff0015&text="+data.result.number, data.result.number)
             .setImageDisplay('CROPPED')
           )          
           .addSuggestions(['Exit', 'Main Menu'])              
@@ -170,7 +170,7 @@ let createRefundIncident = (app)=>{
           +". \nOur customer care agent will get back to you shortly"
           +".\nWhat do you wanna do next?")
             .setTitle("Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully.")
-            .setImage("https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number, data.result.number)
+            .setImage("https://dummyimage.com/700x400/fff/ff0015&text="+data.result.number, data.result.number)
             .setImageDisplay('CROPPED')
           )          
           .addSuggestions(['Exit', 'Main Menu'])              
