@@ -45,7 +45,7 @@ let createScheduleIncident = (app)=>{
           +". \nOur customer care agent will get back to you shortly"
           +".\nWhat do you wanna do next?")
             .setTitle("Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully.")
-            .setImage("https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number, data.result.number)
+            .setImage("https://dummyimage.com/400x300/fff/ff0015&text="+data.result.number, data.result.number)
             .setImageDisplay('ORIGINAL')
           )          
           .addSuggestions(['Exit', 'Main Menu'])              
