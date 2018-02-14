@@ -663,15 +663,14 @@ let createScheduleIncident = (app)=>{
           app.ask(app.buildRichResponse()
           // Create a basic card and add it to the rich response
           .addSimpleResponse('Incident created!')
-          .addBasicCard(app.buildBasicCard("Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
+          .addBasicCard(app.buildBasicCard("Please note your incident id for future reference : "+data.result.number
           +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+app.body_.result.parameters.phoneNumber
           +". \nOur customer care agent will get back to you shortly"
           +".\nWhat do you wanna do next?")
-            .setTitle('Your incident has been raised')
-            .addButton('Exit', 'exit')
-            .addButton('Main Menu','main menu')
+            .setTitle("Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully.")
             .setImage("https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number, data.result.number)
             .setImageDisplay('CROPPED')
+            .addSuggestions(['Exit', 'Main Menu'])
           )
               /*{
             speech: "Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully, please find the details on screen ",
