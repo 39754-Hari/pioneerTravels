@@ -610,7 +610,7 @@ googleAssistantFunction.operation = function(req,res){
 //DialogflowApp
 let createScheduleIncident = (app)=>{
     console.log('Inside successful',app.body_.result.parameters);
-        serviceNowApi.createIncident(req.body.result.parameters,'2',function(err,data){
+        serviceNowApi.createIncident(app.body_.result.parameters,'2',function(err,data){
           if (err) {
             resObj={
               "speech": "",
