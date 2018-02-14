@@ -659,7 +659,8 @@ let createScheduleIncident = (app)=>{
               }
             ]
           };*/
-
+          
+          console.log('Inside else,success');
           app.ask(app.buildRichResponse()
           // Create a basic card and add it to the rich response
           .addBasicCard(app.buildBasicCard("Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
