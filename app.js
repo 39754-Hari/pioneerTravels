@@ -4,7 +4,8 @@ const bodyparser = require('body-parser')
 var serviceNowApi = require('./serviceNowApi')
 var facebook = require('./facebook')
 var slack = require('./slack')
-var google = require('./googleAssitant')
+var googleAPI = require('./googleAssitant_with_API')
+var googleJson = require('./googleAssistant_with_JSON')
 const { DialogflowApp } = require('actions-on-google');
 app.use(bodyparser.json());
 
@@ -16,10 +17,12 @@ app.post('/pioneerServiceNow', (req, res) =>{
   else if(req.body.originalRequest.source === 'slack'){
     slack.operation(req,res);
   }
+  else if(req.body.originalRequest.source === 'google' && req.body.result.action === 'incident_status'){ 
+    googleJson.operation(req,res);
+  }
   else if(req.body.originalRequest.source === 'google'){    
     const googleApp = new DialogflowApp({ request: req, response: res });
-    googleApp.handleRequest(google);
-    //google.operation(req,res);
+    googleApp.handleRequest(googleAPI);
   }
 });
 

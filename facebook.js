@@ -2,7 +2,7 @@ var serviceNowApi = require('./serviceNowApi.js')
 var facebookFunction={};
 
 facebookFunction.operation = function(req,res){
-if(req.body.result.action === 'create_incident_sub_category1-1'){   
+if(req.body.result.action === 'create_incident_late_schedule'){   
     var resObj = {}; 
     serviceNowApi.createIncident(req.body.result.parameters,'2',function(err,data){
       if (err) {
@@ -64,7 +64,7 @@ if(req.body.result.action === 'create_incident_sub_category1-1'){
       res.json(resObj);
     });   
   }
-  if(req.body.result.action === 'create_incident_sub_category1-2'){    
+  if(req.body.result.action === 'create_incident_boarding'){    
     var resObj = {}; 
     serviceNowApi.createIncident(req.body.result.parameters,'2',function(err,data){
       if (err) {
@@ -109,7 +109,7 @@ if(req.body.result.action === 'create_incident_sub_category1-1'){
       res.json(resObj);
     });      
   }
-  if(req.body.result.action === 'create_incident_sub_category2-1'){    
+  if(req.body.result.action === 'create_incident_maintenance'){    
     var resObj = {}; 
     serviceNowApi.createIncident(req.body.result.parameters,'1',function(err,data){
       if (err) {
@@ -154,7 +154,7 @@ if(req.body.result.action === 'create_incident_sub_category1-1'){
       res.json(resObj);
     }); 
   }  
-  if(req.body.result.action === 'create_incident_sub_category2-2'){    
+  if(req.body.result.action === 'create_incident_food'){    
     var resObj = {}; 
     serviceNowApi.createIncident(req.body.result.parameters,'1',function(err,data){
       if (err) {
@@ -199,7 +199,7 @@ if(req.body.result.action === 'create_incident_sub_category1-1'){
       res.json(resObj);
     });
   }
-  if(req.body.result.action === 'create_incident_sub_category3-1'){    
+  if(req.body.result.action === 'create_incident_payment_fail'){    
     var resObj = {}; 
     serviceNowApi.createIncident(req.body.result.parameters,'1',function(err,data){
       if (err) {
@@ -244,7 +244,7 @@ if(req.body.result.action === 'create_incident_sub_category1-1'){
       res.json(resObj);
     });
   }
-  if(req.body.result.action === 'create_incident_sub_category3-2'){    
+  if(req.body.result.action === 'create_incident_refund'){    
     var resObj = {}; 
     serviceNowApi.createIncident(req.body.result.parameters,'1',function(err,data){
       if (err) {
