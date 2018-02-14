@@ -670,8 +670,8 @@ let createScheduleIncident = (app)=>{
             .setTitle("Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully.")
             .setImage("https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number, data.result.number)
             .setImageDisplay('CROPPED')
-            .addSuggestions(['Exit', 'Main Menu'])
-          )
+          )          
+          .addSuggestions(['Exit', 'Main Menu'])
               /*{
             speech: "Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully, please find the details on screen ",
             displayText: "Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
