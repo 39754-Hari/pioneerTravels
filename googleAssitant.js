@@ -660,9 +660,9 @@ let createScheduleIncident = (app)=>{
             ]
           };*/
           app.ask({
-            speech: "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully, please find the details on screen ",
-            displayText: "Hi "+req.body.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
-            +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+req.body.result.parameters.phoneNumber
+            speech: "Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully, please find the details on screen ",
+            displayText: "Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
+            +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+app.body_.result.parameters.phoneNumber
             +". \nOur customer care agent will get back to you shortly"
             +".\nWhat do you wanna do next?"
           });
