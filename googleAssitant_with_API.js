@@ -46,7 +46,7 @@ let createScheduleIncident = (app)=>{
           +".\nWhat do you wanna do next?")
             .setTitle("Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully.")
             .setImage("https://dummyimage.com/300x200/fff/ff0015&text="+data.result.number, data.result.number)
-            .setImageDisplay('CROPPED')
+            .setImageDisplay('ORIGINAL')
           )          
           .addSuggestions(['Exit', 'Main Menu'])              
         );   
