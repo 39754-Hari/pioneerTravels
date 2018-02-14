@@ -247,4 +247,4 @@ googleAssistantFunction.operation = function(req,res){
            
       }    
 }
-/*//module.exports = googleAssistantFunction;*/
+module.exports = googleAssistantFunction;
