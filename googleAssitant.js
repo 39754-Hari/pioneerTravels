@@ -659,10 +659,9 @@ let createScheduleIncident = (app)=>{
               }
             ]
           };*/
-          
+
           app.ask(app.buildRichResponse()
           // Create a basic card and add it to the rich response
-          //.addSimpleResponse('Math and prime numbers it is!')
           .addBasicCard(app.buildBasicCard("Hi "+app.body_.result.parameters.userName +", Your Incident has been raised successfully. Please note your incident id for future reference : "+data.result.number
           +". \nAn acknowledgement SMS with incident id will be sent to your Phone number "+app.body_.result.parameters.phoneNumber
           +". \nOur customer care agent will get back to you shortly"
@@ -684,10 +683,11 @@ let createScheduleIncident = (app)=>{
           //res.json(resObj);
         }*/
         );   
+        
       }
-
-
+    });
+}
 const actionMap = new Map();
 actionMap.set('create_incident_late_schedule', createScheduleIncident);
 module.exports = actionMap;
-//module.exports = googleAssistantFunction;
+/*//module.exports = googleAssistantFunction;*/
