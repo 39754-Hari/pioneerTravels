@@ -6,6 +6,7 @@ var facebook = require('./facebook')
 var slack = require('./slack')
 var googleAPI = require('./googleAssitant_with_API')
 var googleJson = require('./googleAssistant_with_JSON')
+var googleLogin = require('./googleLogin')
 const { DialogflowApp } = require('actions-on-google');
 app.use(bodyparser.json());
 
@@ -28,6 +29,8 @@ app.post('/pioneerServiceNow', (req, res) =>{
 
 app.post('/authorize', (req, res) =>{ 
   console.log('initial req:',req.body);
+  googleLogin.getAuth0Tocken();
+
 }); 
 
 
