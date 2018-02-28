@@ -29,7 +29,24 @@ app.post('/pioneerServiceNow', (req, res) =>{
 
 app.get('/authorize', (req, res) =>{ 
   console.log('initial req:',req.body);
-  googleLogin.getAuth0Tocken();
+  //googleLogin.getAuth0Tocken();
+    
+  var resObj = {}; 
+    resObj={
+    "speech": "",
+    "messages": [
+      {
+        "type": 2,
+        "platform": "facebook",
+        "title": "Hi Welcome..!",
+        "replies": [
+          "Exit",
+          "Main menu"
+        ]
+      }
+      ]
+    };
+    res.json(resObj);
 
 }); 
 
