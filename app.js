@@ -26,7 +26,9 @@ app.post('/pioneerServiceNow', (req, res) =>{
   }
 });
 
-  
+app.post('/authorize', (req, res) =>{ 
+  console.log('initial req:',req.body);
+}); 
 
 
 app.listen(process.env.port||process.env.PORT||3000, () => console.log('App started Running!'));
