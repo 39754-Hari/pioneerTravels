@@ -28,7 +28,7 @@ app.post('/pioneerServiceNow', (req, res) =>{
 });
 
 app.get('/authorize', (req, res) =>{ 
-  console.log('initial req:',req.query);
+  console.log('initial req:',req);
   //googleLogin.getAuth0Tocken();
     
   var resObj = {}; 
