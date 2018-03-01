@@ -9,7 +9,7 @@ var googleJson = require('./googleAssistant_with_JSON')
 var googleLogin = require('./googleLogin')
 const { DialogflowApp } = require('actions-on-google');
 app.use(bodyparser.json());
-
+app.use(express.static('html'));
 app.post('/pioneerServiceNow', (req, res) =>{ 
   console.log('initial req:',req.body);
   if(req.body.originalRequest.source === 'facebook'){
